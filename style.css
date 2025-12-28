@@ -1,0 +1,228 @@
+/* style.css */
+:root {
+    --bg-color: #121212;
+    --header-bg: #1a1a1d;
+    --card-bg: #25252b;
+    --card-active: #33333d;
+    --text-color: #ffffff;
+    --accent: #6c5ce7;      /* Morado vibrante */
+    --accent-alt: #00cec9;  /* Cian */
+    --danger: #ff7675;      /* Rojo suave */
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Evita selección de texto (sensación de App) */
+    -webkit-user-select: none;
+    user-select: none;
+    /* Elimina el highlight azul al tocar en móviles */
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Evita scroll doble */
+}
+
+/* HEADER */
+header {
+    background-color: var(--header-bg);
+    padding: 10px 15px;
+    border-bottom: 2px solid var(--accent);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-alt);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-icon:active { transform: rotate(180deg); }
+
+/* CONTROLES */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.controls label {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    outline: none;
+}
+
+/* IDENTIDAD SECRETA */
+.identity-panel {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 50px; /* Evita saltos de layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-action {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.hidden { display: none !important; }
+
+.secret-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    animation: fadeIn 0.3s ease;
+}
+
+.secret-info img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-alt);
+}
+
+.secret-info span {
+    font-weight: bold;
+    color: var(--accent-alt);
+    font-size: 1.1rem;
+}
+
+.btn-small {
+    background: #444;
+    color: #ccc;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+/* TABLERO */
+main {
+    flex-grow: 1;
+    overflow-y: auto; /* Scroll suave */
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.board {
+    display: grid;
+    /* Grid inteligente: 2 columnas mínimo en móvil */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    padding-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+    .board { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+
+/* CARTAS */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    min-height: 140px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.1s, background-color 0.2s;
+    border: 2px solid transparent;
+}
+
+.card:active {
+    transform: scale(0.96);
+    background-color: var(--card-active);
+}
+
+.card img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #000;
+    object-fit: cover;
+}
+
+.card span {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    padding: 0 5px;
+    word-wrap: break-word;
+}
+
+/* ESTADO DESCARTADO */
+.card.discarded {
+    opacity: 0.4;
+    filter: grayscale(100%);
+    background-color: #151515;
+}
+
+.card.discarded::after {
+    content: "❌";
+    position: absolute;
+    font-size: 2.5rem;
+    color: var(--danger);
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

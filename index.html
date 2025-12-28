@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Tablero ¿Quién es Quién?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <h1>🕵️‍♂️ Tablero Virtual</h1>
+            <button id="resetBtn" class="btn-icon" aria-label="Reiniciar">🔄</button>
+        </div>
+        
+        <div class="controls">
+            <label for="categorySelect">Categoría:</label>
+            <select id="categorySelect"></select>
+        </div>
+
+        <div id="identityPanel" class="identity-panel">
+            <div id="hiddenState">
+                <button id="assignBtn" class="btn-action">🎲 Asignarme Personaje</button>
+            </div>
+            
+            <div id="revealedState" class="hidden">
+                <div class="secret-info">
+                    <img id="secretImg" src="" alt="?">
+                    <span id="secretName"></span>
+                </div>
+                <button id="toggleVisibilityBtn" class="btn-small">🙈 Ocultar</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="gameBoard" class="board">
+            </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
