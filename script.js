@@ -18,7 +18,7 @@ let currentItems = [];
 // Inicialización
 function init() {
     loadCategories();
-    // Seleccionar la primera categoría por defecto
+    // Seleccionar la primera categoría por defecto y arrancar
     const firstCat = Object.keys(gameData)[0];
     startGame(firstCat);
 }
@@ -33,18 +33,21 @@ function loadCategories() {
 }
 
 function startGame(categoryKey) {
-    // 1. Limpiar tablero
+    // 1. Limpiar tablero visual
     gameBoard.innerHTML = '';
     
-    // 2. Resetear panel de identidad
+    // 2. Resetear panel de identidad a "Oculto"
     resetIdentityPanel();
 
-    // 3. Obtener y mezclar items
+    // 3. Obtener lista de items
+    // IMPORTANTE: Clonamos el array para no modificar el original
     const items = [...gameData[categoryKey].items];
+    
+    // 4. Barajar las cartas del tablero
     shuffleArray(items);
-    currentItems = items;
+    currentItems = items; // Guardamos el estado actual para la lógica
 
-    // 4. Generar cartas
+    // 5. Generar cartas en el DOM
     items.forEach(name => {
         const card = createCard(name);
         gameBoard.appendChild(card);
@@ -55,27 +58,28 @@ function createCard(name) {
     const card = document.createElement('div');
     card.className = 'card';
     
-    // Generar Avatar basado en el nombre (API Gratuita)
-    const bgColors = ['6c5ce7', '00cec9', 'fab1a0', 'fd79a8', '0984e3', 'e17055'];
-    const color = bgColors[name.length % bgColors.length]; // Color consistente por nombre
-    const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=${color}&color=fff&size=128&bold=true`;
+    // Generar Avatar consistente basado en el nombre
+    // Usamos UI-Avatars porque no requiere base de datos de imágenes externa
+    const bgColors = ['6c5ce7', '00cec9', 'fab1a0', 'fd79a8', '0984e3', 'e17055', '00b894', 'd63031'];
+    const color = bgColors[name.length % bgColors.length];
+    const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=${color}&color=fff&size=128&bold=true&length=2`;
 
     card.innerHTML = `
         <img src="${avatarUrl}" alt="${name}" loading="lazy">
         <span>${name}</span>
     `;
 
-    // Evento Click
+    // Evento Click: Descartar / Reactivar
     card.addEventListener('click', () => {
-        // Vibración táctil (Android)
-        if (navigator.vibrate) navigator.vibrate(15);
+        // Pequeña vibración en Android
+        if (navigator.vibrate) navigator.vibrate(10);
         card.classList.toggle('discarded');
     });
 
     return card;
 }
 
-// Algoritmo Fisher-Yates para mezclar
+// Algoritmo Fisher-Yates para mezclar aleatoriamente
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -89,50 +93,64 @@ function resetIdentityPanel() {
     hiddenState.classList.remove('hidden');
     revealedState.classList.add('hidden');
     secretName.textContent = '';
+    
+    // Resetear estado de visibilidad
     toggleVisibilityBtn.textContent = '🙈 Ocultar';
-    revealedState.style.opacity = '1';
+    document.querySelector('.secret-card-mini').style.filter = 'none';
 }
 
 assignBtn.addEventListener('click', () => {
-    if (currentItems.length === 0) return;
-
-    // Elegir personaje al azar
-    const randomName = currentItems[Math.floor(Math.random() * currentItems.length)];
+    // Escoger uno al azar de la categoría actual (NO de los que quedan en el tablero, sino del total)
+    // Esto simula "sacar una carta del mazo"
+    const currentCategoryKey = categorySelect.value;
+    const allItems = gameData[currentCategoryKey].items;
+    const randomName = allItems[Math.floor(Math.random() * allItems.length)];
     
-    // Configurar UI
-    const bgColors = ['6c5ce7', '00cec9', 'fab1a0', 'fd79a8', '0984e3', 'e17055'];
+    // Generar misma imagen que en el tablero
+    const bgColors = ['6c5ce7', '00cec9', 'fab1a0', 'fd79a8', '0984e3', 'e17055', '00b894', 'd63031'];
     const color = bgColors[randomName.length % bgColors.length];
     
     secretName.textContent = randomName;
-    secretImg.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(randomName)}&background=${color}&color=fff&size=128&bold=true`;
+    secretImg.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(randomName)}&background=${color}&color=fff&size=128&bold=true&length=2`;
 
-    // Mostrar
+    // Mostrar panel revelado
     hiddenState.classList.add('hidden');
     revealedState.classList.remove('hidden');
+    
+    // Vibración de confirmación
+    if (navigator.vibrate) navigator.vibrate([30, 50, 30]);
 });
 
 toggleVisibilityBtn.addEventListener('click', () => {
-    // Alternar visibilidad sin borrar el personaje
-    if (revealedState.style.opacity === '0') {
-        revealedState.style.opacity = '1';
+    const infoContainer = document.querySelector('.secret-card-mini');
+    
+    // Alternar visibilidad (borroso vs claro)
+    if (infoContainer.style.filter === 'blur(10px)') {
+        infoContainer.style.filter = 'none';
         toggleVisibilityBtn.textContent = '🙈 Ocultar';
     } else {
-        revealedState.style.opacity = '0';
+        infoContainer.style.filter = 'blur(10px)';
         toggleVisibilityBtn.textContent = '👁️ Ver';
     }
 });
 
-// Eventos Globales
+// Eventos Globales de Controles
 categorySelect.addEventListener('change', (e) => {
     startGame(e.target.value);
 });
 
 resetBtn.addEventListener('click', () => {
-    // Animación simple de rotación
+    // Animación de rotación del icono
+    resetBtn.style.transition = 'transform 0.4s ease';
     resetBtn.style.transform = 'rotate(360deg)';
-    setTimeout(() => resetBtn.style.transform = 'none', 300);
+    
+    setTimeout(() => {
+        resetBtn.style.transform = 'none';
+        resetBtn.style.transition = 'none';
+    }, 400);
+
     startGame(categorySelect.value);
 });
 
-// Arrancar app
+// Arrancar App
 init();
