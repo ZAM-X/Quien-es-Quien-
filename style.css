@@ -1,113 +1,247 @@
-/* style.css */
 :root {
-    --bg-color: #121212;
-    --card-bg: #1e1e24;
-    --accent: #6c5ce7;
-    --text: #ffffff;
+    --bg-main: #0f0f12;
+    --card-bg: #1c1c21;
+    --accent: #6c5ce7; /* Morado moderno */
+    --accent-light: #a29bfe;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --danger: #ff7675;
+    --font: 'Inter', sans-serif;
 }
 
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-    font-family: sans-serif;
-    touch-action: manipulation; 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-body { 
-    background: var(--bg-color); 
-    color: var(--text); 
-    /* Quitamos el overflow: hidden para permitir scroll en toda la página */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font);
     min-height: 100vh;
+    /* Permite scroll nativo fluido */
+    overflow-x: hidden;
+    overflow-y: auto; 
+    padding-bottom: 40px;
 }
 
-header { 
-    padding: 15px; 
-    background: #1a1a1d; 
-    border-bottom: 2px solid var(--accent);
-    position: sticky; /* Se queda arriba mientras bajas */
+/* --- HEADER --- */
+header {
+    padding: 20px;
+    background: rgba(15, 15, 18, 0.95);
+    position: sticky;
     top: 0;
     z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
 }
 
-.identity-panel {
-    margin-top: 10px;
-    background: rgba(255,255,255,0.05);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/* Personaje en pequeñito */
-.secret-info {
+.header-top {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    transition: filter 0.3s ease;
+    margin-bottom: 15px;
 }
 
-.secret-info img {
-    width: 35px; /* Tamaño pequeño */
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
+h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #fff, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.secret-info span {
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-/* Efecto censurado/borroso */
-.blurred {
-    filter: blur(8px) grayscale(1);
-    pointer-events: none;
-}
-
-.board {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 15px;
-}
-
-.card {
-    background: var(--card-bg);
+.controls select {
+    width: 100%;
+    padding: 12px;
     border-radius: 12px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    background: #2d2d35;
+    color: white;
+    border: 1px solid #444;
+    font-size: 1rem;
+    font-family: var(--font);
+    outline: none;
 }
 
-.card img {
-    width: 70px;
-    height: 70px;
+/* --- BOTONES --- */
+.btn-icon {
+    background: #2d2d35;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    margin-bottom: 10px;
-    pointer-events: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card.discarded {
-    opacity: 0.2;
-    filter: grayscale(1);
-}
-
-.btn-action, .btn-small {
+.btn-main {
     width: 100%;
     padding: 12px;
     background: var(--accent);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-weight: bold;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
 }
 
-.btn-small {
-    margin-top: 8px;
-    padding: 6px;
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--accent-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- IDENTIDAD SECRETA (BLUR EFFECT) --- */
+.identity-section {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.identity-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
     font-size: 0.8rem;
-    background: #444;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-.hidden { display: none !important; }
+.secret-card {
+    background: linear-gradient(145deg, #232329, #1a1a1e);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para contener el blur */
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.secret-content {
+    transition: filter 0.3s ease;
+}
+
+/* ESTADO: BORROSO */
+.secret-card.blur-active .secret-content {
+    filter: blur(12px);
+    opacity: 0.5;
+}
+
+.blur-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.secret-card.blur-active .blur-overlay {
+    opacity: 1;
+}
+
+.blur-overlay span {
+    background: rgba(0,0,0,0.6);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* --- GRID TABLERO --- */
+.grid-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Tarjetas más compactas */
+    gap: 12px;
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- TARJETAS --- */
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.card:active {
+    transform: scale(0.96);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: rgba(0,0,0,0.6);
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2);
+}
+
+.avatar.large {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #eee;
+}
+
+/* ESTADO: DESCARTADO */
+.card.discarded {
+    opacity: 0.4;
+    filter: grayscale(100%);
+    background: #141416;
+}
+
+.card.discarded::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.2);
+    border-radius: 16px;
+}
