@@ -5,33 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tablero ¿Quién es Quién?</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <h1>🕵️‍♂️ Quién es Quién</h1>
-            <button id="resetBtn" class="btn-icon">🔄</button>
-        </div>
-        <div class="controls">
-            <select id="categorySelect"></select>
-        </div>
-        <div id="identityPanel" class="identity-panel">
-            <div id="hiddenState">
-                <button id="assignBtn" class="btn-action">🎲 Mi Personaje</button>
+
+    <div class="app-container">
+        
+        <header>
+            <div class="header-top">
+                <h1>🕵️ ¿QUIÉN ES?</h1>
+                <button id="resetBtn" class="btn-icon">↻</button>
             </div>
-            <div id="revealedState" class="hidden">
-                <div class="secret-info">
-                    <img id="secretImg" src="" alt="?">
-                    <span id="secretName"></span>
+            
+            <div class="controls">
+                <select id="categorySelect">
+                    </select>
+            </div>
+        </header>
+
+        <section class="identity-section">
+            <div class="identity-header">
+                <span>TU PERSONAJE SECRETO</span>
+                <button id="toggleIdentityBtn" class="btn-text">👁️ Mostrar</button>
+            </div>
+            
+            <div id="secretCard" class="secret-card blur-active">
+                <div class="secret-content">
+                    <div id="secretAvatar" class="avatar large">?</div>
+                    <div id="secretName" class="name">???</div>
                 </div>
-                <button id="toggleVisibilityBtn" class="btn-small">🙈 Ocultar</button>
+                <div class="blur-overlay">
+                    <span>TOP SECRET</span>
+                </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div id="gameBoard" class="board"></div>
-    </main>
+            <button id="pickIdentityBtn" class="btn-main">🎲 Asignar Nuevo Personaje</button>
+        </section>
+
+        <main id="board" class="grid-board">
+            </main>
+
+    </div>
+
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
