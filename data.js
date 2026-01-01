@@ -1,4 +1,3 @@
-/* data.js */
 const gameData = {
     "videojuegos_juegos": {
         title: "🎮 Videojuegos: Títulos",
@@ -6,98 +5,106 @@ const gameData = {
             "The Last of Us", "GTA V", "Minecraft", "Fortnite",
             "RDR 2", "God of War", "Cyberpunk 2077", "Elden Ring",
             "Zelda BOTW", "Resident Evil 4", "Silent Hill", "Halo",
-            "Call of Duty", "Among Us", "Undertale", "Cuphead",
-            "League of Legends", "Valorant", "The Sims", "Skyrim"
+            "Call of Duty", "Among Us", "Undertale", "Cuphead"
         ]
     },
     "videojuegos_personajes": {
         title: "🎮 Videojuegos: Personajes",
         items: [
             "Mario", "Kratos", "Master Chief", "Link",
-            "Joel", "Lara Croft", "Geralt de Rivia", "Arthur Morgan",
-            "Ezio Auditore", "Solid Snake", "Cloud Strife", "Pikachu",
-            "Sonic", "Samus Aran", "Aloy", "Nathan Drake",
-            "Sephiroth", "Jill Valentine", "Spyro", "Doomslayer"
+            "Joel", "Lara Croft", "Geralt", "Arthur Morgan",
+            "Ezio", "Solid Snake", "Cloud Strife", "Pikachu",
+            "Sonic", "Samus Aran", "Aloy", "Nathan Drake"
+        ]
+    },
+    "desarrolladoras": {
+        title: "🏢 Desarrolladoras",
+        items: [
+            "Nintendo", "Sony", "Microsoft", "Rockstar",
+            "Naughty Dog", "Ubisoft", "EA", "Activision",
+            "Blizzard", "Capcom", "Square Enix", "Bethesda",
+            "FromSoftware", "CD Projekt Red", "Epic Games", "Valve"
         ]
     },
     "peliculas": {
-        title: "🎬 Películas",
+        title: "🍿 Películas (Español)",
         items: [
             "El Padrino", "Caballero de la Noche", "Pulp Fiction", "Señor de los Anillos",
             "Matrix", "Titanic", "Avatar", "Parque Jurásico",
             "Volver al Futuro", "Forrest Gump", "Club de la Pelea", "Lista de Schindler",
-            "Gladiador", "Interestelar", "El Origen", "Bastardos sin Gloria",
-            "Toy Story", "El Resplandor", "Parásitos", "Buscando a Nemo"
+            "Gladiador", "Interestelar", "El Origen", "Bastardos sin Gloria"
         ]
     },
-    "marcas": {
-        title: "🏷️ Marcas y Apps",
+    "series": {
+        title: "📺 Series",
         items: [
-            "Instagram", "TikTok", "YouTube", "Netflix",
-            "Spotify", "Disney", "PlayStation", "Xbox",
-            "Apple", "Samsung", "Nike", "Adidas",
-            "McDonald’s", "Burger King", "Coca-Cola", "Amazon",
-            "Tesla", "Google", "Nintendo", "Microsoft"
+            "Breaking Bad", "Better Call Saul", "Juego de Tronos", "Stranger Things",
+            "Walking Dead", "Dark", "The Last of Us", "Black Mirror",
+            "Narcos", "Peaky Blinders", "Los Simpson", "Friends",
+            "The Office", "Casa de Papel", "Dexter", "Euphoria"
         ]
     },
-    "lugares": {
-        title: "🌍 Lugares Icónicos",
+    "moda": {
+        title: "🧢 Marcas de Moda",
         items: [
-            "Torre Eiffel", "Estatua de la Libertad", "Coliseo Romano", "Gran Muralla China",
-            "Machu Picchu", "Taj Mahal", "Big Ben", "Sagrada Familia",
-            "Cristo Redentor", "Petra", "Ópera de Sídney", "Monte Fuji",
-            "Pirámides de Giza", "Chichén Itzá", "Burj Khalifa", "Stonehenge",
-            "Gran Cañón", "Catedral de San Basilio", "Torre de Pisa", "Monte Everest"
+            "Nike", "Adidas", "Puma", "Gucci",
+            "Prada", "Louis Vuitton", "Balenciaga", "Supreme",
+            "Off-White", "Vans", "Converse", "Zara",
+            "H&M", "Dior", "Versace", "New Balance"
         ]
     },
-    "libros": {
-        title: "📚 Libros",
+    "redes": {
+        title: "📱 Redes Sociales",
         items: [
-            "Don Quijote", "Cien años de soledad", "El principito", "La Biblia",
-            "Amor en tiempos del cólera", "Hansel y Gretel", "Crónica muerte anunciada", "Señor de los Anillos",
-            "Harry Potter (Piedra)", "Diario de Ana Frank", "La Odisea", "Drácula",
-            "Frankenstein", "Juegos del hambre", "Romeo y Julieta", "1984",
-            "El Código Da Vinci", "Orgullo y Prejuicio", "El Alquimista", "Rayuela"
+            "Instagram", "Facebook", "TikTok", "X (Twitter)",
+            "Snapchat", "WhatsApp", "Telegram", "Discord",
+            "Reddit", "YouTube", "Twitch", "Pinterest",
+            "LinkedIn", "Threads", "BeReal", "Tumblr"
         ]
     },
-    "anime": {
-        title: "⛩️ Anime",
+    "plataformas": {
+        title: "🎥 Entretenimiento",
         items: [
-            "Goku", "Naruto", "Luffy", "Saitama",
-            "Tanjiro", "Eren Yeager", "Edward Elric", "Spike Spiegel",
-            "Ichigo", "Shinji Ikari", "Ash Ketchum", "Deku",
-            "Sailor Moon", "Gohan", "Levi Ackerman", "Light Yagami",
-            "Killua", "Zoro", "Kakashi", "Inuyasha"
+            "Netflix", "Disney+", "HBO Max", "Amazon Prime",
+            "Apple TV+", "Paramount+", "Crunchyroll", "Spotify",
+            "PlayStation", "Xbox", "Steam", "Epic Store",
+            "Ubisoft Connect", "EA Play", "Nickelodeon", "Cartoon Network"
         ]
     },
-    "superheroes": {
-        title: "🦸 Superhéroes",
+    "disney": {
+        title: "🐭 Personajes Disney",
         items: [
-            "Spider-Man", "Batman", "Iron Man", "Superman",
-            "Wonder Woman", "Thor", "Hulk", "Capitán América",
-            "Wolverine", "Flash", "Deadpool", "Black Widow",
-            "Doctor Strange", "Black Panther", "Linterna Verde", "Aquaman",
-            "Daredevil", "Cíclope", "Joker", "Robin"
+            "Mickey Mouse", "Minnie", "Donald", "Goofy",
+            "Simba", "Mufasa", "Elsa", "Anna",
+            "Olaf", "Buzz Lightyear", "Woody", "Ariel",
+            "Aladdin", "Stitch", "Hércules", "Mulán"
         ]
     },
-    "animales": {
-        title: "🐘 Animales",
+    "paises": {
+        title: "🌍 Países",
         items: [
-            "León", "Elefante", "Tigre", "Jirafa",
-            "Delfín", "Pingüino", "Lobo", "Oso Panda",
-            "Canguro", "Águila", "Tiburón", "Caballo",
-            "Gato", "Perro", "Gorila", "Cebra",
-            "Rinoceronte", "Orca", "Pulpo", "Búho"
+            "Colombia", "México", "USA", "Canadá",
+            "Brasil", "Argentina", "España", "Francia",
+            "Alemania", "Italia", "Reino Unido", "Japón",
+            "China", "Corea del Sur", "Australia", "Rusia"
         ]
     },
-    "comida": {
-        title: "🍕 Comida y Platos",
+    "famosos": {
+        title: "⭐ Famosos",
         items: [
-            "Pizza", "Hamburguesa", "Sushi", "Tacos",
-            "Pasta", "Paella", "Ramen", "Hot Dog",
-            "Lasagna", "Ensalada", "Filete", "Helado",
-            "Papas Fritas", "Burrito", "Pollo Frito", "Ceviche",
-            "Croissant", "Donas", "Waffles", "Sandwich"
+            "Michael Jackson", "CR7", "Messi", "Shakira",
+            "Bad Bunny", "Drake", "Taylor Swift", "Kanye West",
+            "Eminem", "Beyoncé", "DiCaprio", "Brad Pitt",
+            "Johnny Depp", "The Rock", "Tom Cruise", "Will Smith"
+        ]
+    },
+    "colombia": {
+        title: "🇨🇴 Cultura Colombia",
+        items: [
+            "Gabo Márquez", "Shakira", "Carlos Vives", "J Balvin",
+            "Karol G", "Juanes", "Sofía Vergara", "Fernando Botero",
+            "Café", "Arepas", "Cumbia", "Vallenato",
+            "Cartagena", "Medellín", "Bogotá", "Barranquilla"
         ]
     }
 };
