@@ -200,14 +200,15 @@ const gameData = {
     "celebridades": {
         title: "🌟 Celebridades",
         items: [
-            "Kim Kardashian", "Kylie Jenner", "Elon Musk", "Mark Zuckerberg",
+            "Donald Trump", "Adam Sandler", "Elon Musk", "Mark Zuckerberg",
             "Dwayne Johnson", "Will Smith", "Johnny Depp", "Leonardo DiCaprio",
             "Brad Pitt", "Angelina Jolie", "Tom Cruise", "Zendaya",
-            "Tom Holland", "Ryan Reynolds", "Jennifer Lawrence", "Margot Robbie",
-            "Gal Gadot", "Scarlett Johansson", "Robert Downey Jr.", "Chris Hemsworth",
-            "Henry Cavill", "Keanu Reeves", "Oprah Winfrey", "Gordon Ramsay",
-            "Paris Hilton", "David Beckham", "Kendall Jenner", "Bella Hadid",
+            "Tom Holland", "Ryan Reynolds", "Diomedes Diaz", "Margot Robbie",
+            "Adolf Hitler", "Scarlett Johansson", "Robert Downey Jr.", "Chris Hemsworth",
+            "Henry Cavill", "Keanu Reeves", "Roberto Gomez Bolaños", "Gordon Ramsay",
+            "Paris Hilton", "David Beckham", "Kendall Jenner", "Christhian Bale",
             "Georgina Rodríguez", "Jennifer Aniston"
         ]
     }
 };
+
