@@ -8,7 +8,6 @@ const gameData = {
             "Zelda BOTW", "Resident Evil 4", "Silent Hill", "Halo",
             "Call of Duty", "Among Us", "Undertale", "Cuphead",
             "League of Legends", "Valorant", "The Sims", "Skyrim",
-            // Nuevos agregados (10)
             "Overwatch", "Street Fighter", "Super Smash Bros", "FIFA",
             "Metroid Dread", "Hollow Knight", "Dark Souls", "Bloodborne",
             "Bioshock", "Tetris"
@@ -22,7 +21,6 @@ const gameData = {
             "Ezio Auditore", "Solid Snake", "Cloud Strife", "Pikachu",
             "Sonic", "Samus Aran", "Aloy", "Nathan Drake",
             "Sephiroth", "Jill Valentine", "Spyro", "Doomslayer",
-            // Nuevos agregados (10)
             "Luigi", "Bowser", "Princess Peach", "Crash Bandicoot",
             "Kirby", "Mega Man", "Dante", "Bayonetta",
             "Ellie Williams", "Leon S. Kennedy"
@@ -36,7 +34,6 @@ const gameData = {
             "Volver al Futuro", "Forrest Gump", "Club de la Pelea", "Lista de Schindler",
             "Gladiador", "Interestelar", "El Origen", "Bastardos sin Gloria",
             "Toy Story", "El Resplandor", "Parásitos", "Buscando a Nemo",
-            // Nuevos agregados (10)
             "Star Wars", "Harry Potter", "Los Vengadores", "El Rey León",
             "Psicosis", "Tiburón", "La La Land", "Coco",
             "Oppenheimer", "Spider-Man: Spider-Verse"
@@ -50,7 +47,6 @@ const gameData = {
             "Apple", "Samsung", "Nike", "Adidas",
             "McDonald’s", "Burger King", "Coca-Cola", "Amazon",
             "Tesla", "Google", "Nintendo", "Microsoft",
-            // Nuevos agregados (Solicitados + 1 para par)
             "Zara", "Chanel", "HP", "Nvidia",
             "Fly Emirates", "Qatar Airways", "Gemini", "Chat GPT",
             "Pinterest", "Louis Vuitton"
@@ -64,7 +60,6 @@ const gameData = {
             "Cristo Redentor", "Petra", "Ópera de Sídney", "Monte Fuji",
             "Pirámides de Giza", "Chichén Itzá", "Burj Khalifa", "Stonehenge",
             "Gran Cañón", "Catedral de San Basilio", "Torre de Pisa", "Monte Everest",
-            // Nuevos agregados (10)
             "Cataratas del Niágara", "Acrópolis de Atenas", "Isla de Pascua", "Alhambra",
             "Cataratas de Iguazú", "Parque Yellowstone", "Monte Rushmore", "Desierto del Sahara",
             "Plaza Roja", "Antártida"
@@ -78,7 +73,6 @@ const gameData = {
             "Harry Potter (Piedra)", "Diario de Ana Frank", "La Odisea", "Drácula",
             "Frankenstein", "Juegos del hambre", "Romeo y Julieta", "1984",
             "El Código Da Vinci", "Orgullo y Prejuicio", "El Alquimista", "Rayuela",
-            // Nuevos agregados (10)
             "Moby Dick", "El Gran Gatsby", "Matar a un ruiseñor", "Los Miserables",
             "La Divina Comedia", "Guerra y Paz", "Crimen y Castigo", "La Metamorfosis",
             "El Hobbit", "Sherlock Holmes"
@@ -92,7 +86,6 @@ const gameData = {
             "Ichigo", "Shinji Ikari", "Ash Ketchum", "Deku",
             "Sailor Moon", "Gohan", "Levi Ackerman", "Light Yagami",
             "Killua", "Zoro", "Kakashi", "Inuyasha",
-            // Nuevos agregados (10)
             "Vegeta", "Sasuke", "Natsu Dragneel", "All Might",
             "Satoru Gojo", "Nezuko", "Mikasa Ackerman", "Asta",
             "Yuji Itadori", "Gon Freecss"
@@ -106,7 +99,6 @@ const gameData = {
             "Wolverine", "Flash", "Deadpool", "Black Widow",
             "Doctor Strange", "Black Panther", "Linterna Verde", "Aquaman",
             "Daredevil", "Cíclope", "Joker", "Robin",
-            // Nuevos agregados (10)
             "Ant-Man", "Scarlet Witch", "Visión", "Hawkeye",
             "Green Arrow", "Shazam", "Star-Lord", "Rocket Raccoon",
             "Groot", "Silver Surfer"
@@ -120,7 +112,6 @@ const gameData = {
             "Canguro", "Águila", "Tiburón", "Caballo",
             "Gato", "Perro", "Gorila", "Cebra",
             "Rinoceronte", "Orca", "Pulpo", "Búho",
-            // Nuevos agregados (10)
             "Koala", "Perezoso", "Camello", "Zorro",
             "Hipopótamo", "Cocodrilo", "Ballena Azul", "Loro",
             "Colibrí", "Mariposa"
@@ -134,7 +125,6 @@ const gameData = {
             "Lasagna", "Ensalada", "Filete", "Helado",
             "Papas Fritas", "Burrito", "Pollo Frito", "Ceviche",
             "Croissant", "Donas", "Waffles", "Sandwich",
-            // Nuevos agregados (10)
             "Tiramisú", "Empanadas", "Curry", "Dumplings",
             "Falafel", "Kebab", "Arepa", "Brownie",
             "Cheesecake", "Mochi"
@@ -148,7 +138,6 @@ const gameData = {
             "Natación", "Rugby", "Atletismo", "Ciclismo",
             "Hockey", "Gimnasia", "Judo", "Surf",
             "Skateboarding", "Ping Pong", "Bádminton", "Esquí",
-            // Nuevos agregados (10)
             "Cricket", "Balonmano", "Polo", "Tiro con Arco",
             "Esgrima", "Lucha Libre", "MMA", "Motociclismo",
             "Remo", "Escalada"
@@ -162,7 +151,6 @@ const gameData = {
             "Argentina", "China", "Reino Unido", "Canadá",
             "Australia", "Colombia", "Rusia", "India",
             "Egipto", "Sudáfrica", "Corea del Sur", "Turquía",
-            // Nuevos agregados (10)
             "Grecia", "Portugal", "Tailandia", "Vietnam",
             "Perú", "Chile", "Marruecos", "Suecia",
             "Noruega", "Suiza"
@@ -176,7 +164,6 @@ const gameData = {
             "Madonna", "BTS", "Dua Lipa", "Bob Marley",
             "Beyoncé", "Kurt Cobain", "Adele", "Bruno Mars",
             "Rolling Stones", "Justin Bieber", "Rihanna", "Daft Punk",
-            // Nuevos agregados (10)
             "Ed Sheeran", "Ariana Grande", "The Weeknd", "Drake",
             "Metallica", "AC/DC", "Linkin Park", "Coldplay",
             "Karol G", "Harry Styles"
@@ -190,10 +177,37 @@ const gameData = {
             "Shrek", "Winnie Pooh", "Pinky y Cerebro", "Garfield",
             "Las Chicas Superpoderosas", "Ben 10", "Phineas y Ferb", "Rick Sanchez",
             "La Pantera Rosa", "Popeye", "Los Picapiedra", "Dora la Exploradora",
-            // Nuevos agregados (10)
             "Dexter", "Coraje el Perro Cobarde", "Johnny Bravo", "Timmy Turner",
             "Cosmo y Wanda", "Tío Rico", "Pato Lucas", "Silvestre",
             "Piolín", "Kim Possible"
+        ]
+    },
+    /* NUEVAS CATEGORÍAS */
+    "streamers": {
+        title: "🎥 Streamers / Youtubers",
+        items: [
+            // Ingleses (4+)
+            "MrBeast", "PewDiePie", "xQc", "IShowSpeed", "Ninja", "Logan Paul",
+            // Hispanos
+            "Ibai", "AuronPlay", "El Rubius", "TheGrefg",
+            "JuanSGuarnizo", "Spreen", "ElMariana", "Rivers GG",
+            "WestCol", "Luisito Comunica", "Fernanfloo", "Germán Garmendia",
+            "Vegetta777", "Willyrex", "DjMaRiiO", "Jordi Wild",
+            "DrossRotzank", "Missasinfonia", "Quackity", "AriGameplays",
+            "Mikecrack", "Fedevigevani", "Staryuuki", "Luzu"
+        ]
+    },
+    "celebridades": {
+        title: "🌟 Celebridades",
+        items: [
+            "Kim Kardashian", "Kylie Jenner", "Elon Musk", "Mark Zuckerberg",
+            "Dwayne Johnson", "Will Smith", "Johnny Depp", "Leonardo DiCaprio",
+            "Brad Pitt", "Angelina Jolie", "Tom Cruise", "Zendaya",
+            "Tom Holland", "Ryan Reynolds", "Jennifer Lawrence", "Margot Robbie",
+            "Gal Gadot", "Scarlett Johansson", "Robert Downey Jr.", "Chris Hemsworth",
+            "Henry Cavill", "Keanu Reeves", "Oprah Winfrey", "Gordon Ramsay",
+            "Paris Hilton", "David Beckham", "Kendall Jenner", "Bella Hadid",
+            "Georgina Rodríguez", "Jennifer Aniston"
         ]
     }
 };
